@@ -28,13 +28,15 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Bump package version
-        run: |
-          # patch | minor | major 중 원하는 수준 지정 가능
-          npm version patch -m "chore(release): bump version to %s [skip ci]"
-      
-      - name: Push changes
+      - name: Configure git identity
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Bump package version
+        run: |
+          npm version patch -m "chore(release): bump version to %s [skip ci]"
+
+      - name: Push changes
+        run: |
           git push origin main --follow-tags
