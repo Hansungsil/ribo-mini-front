@@ -1,3 +1,5 @@
+'use client';
+
 const Nav = () => {
   return <nav>Nav</nav>;
 };
