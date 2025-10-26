@@ -1,15 +1,14 @@
 'use client';
 
 import {
-  Activity,
   Component,
   HomeIcon,
-  Mail,
-  Package,
-  ScrollText,
-  SunMoon,
+  StickyNote,
+  LayoutDashboard,
+  User,
 } from 'lucide-react';
 import { Dock, DockIcon, DockItem, DockLabel } from '@/components/ui/shadcn-io/dock';
+import Link from 'next/link';
 
 const data = [
   {
@@ -17,63 +16,50 @@ const data = [
     icon: (
       <HomeIcon className='h-full w-full text-neutral-600 dark:text-neutral-300' />
     ),
-    href: '#',
+    href: '/',
   },
   {
-    title: 'Products',
+    title: 'Posts',
     icon: (
-      <Package className='h-full w-full text-neutral-600 dark:text-neutral-300' />
+      <StickyNote className='h-full w-full text-neutral-600 dark:text-neutral-300' />
     ),
-    href: '#',
+    href: '/posts',
+  },
+  {
+    title: 'Layouts',
+    icon: (
+      <LayoutDashboard className='h-full w-full text-neutral-600 dark:text-neutral-300' />
+    ),
+    href: '/layouts',
   },
   {
     title: 'Components',
     icon: (
       <Component className='h-full w-full text-neutral-600 dark:text-neutral-300' />
     ),
-    href: '#',
+    href: '/compos',
   },
   {
-    title: 'Activity',
+    title: 'Info',
     icon: (
-      <Activity className='h-full w-full text-neutral-600 dark:text-neutral-300' />
+      <User className='h-full w-full text-neutral-600 dark:text-neutral-300' />
     ),
-    href: '#',
-  },
-  {
-    title: 'Change Log',
-    icon: (
-      <ScrollText className='h-full w-full text-neutral-600 dark:text-neutral-300' />
-    ),
-    href: '#',
-  },
-  {
-    title: 'Email',
-    icon: (
-      <Mail className='h-full w-full text-neutral-600 dark:text-neutral-300' />
-    ),
-    href: '#',
-  },
-  {
-    title: 'Theme',
-    icon: (
-      <SunMoon className='h-full w-full text-neutral-600 dark:text-neutral-300' />
-    ),
-    href: '#',
+    href: '/info',
   },
 ];
 export default function AppleStyleDock() {
   return (
-    <div className='absolute bottom-2 left-1/2 max-w-full -translate-x-1/2'>
-      <Dock className='items-end pb-3'>
+    <div className='absolute bottom-2 left-1/2 max-w-full -translate-x-1/2 bg-transparent'>
+      <Dock className='items-end pb-3 bg-transparent'>
         {data.map((item, idx) => (
-          <DockItem
-            key={idx}
-            className='aspect-square rounded-full bg-gray-200 dark:bg-neutral-800'
-          >
-            <DockLabel>{item.title}</DockLabel>
-            <DockIcon>{item.icon}</DockIcon>
-          </DockItem>
+          <Link href={item.href} key={idx}> 
+            <DockItem
+              className='aspect-square rounded-full bg-gray-200 dark:bg-gray-800'
+            >
+              <DockLabel>{item.title}</DockLabel>
+              <DockIcon>{item.icon}</DockIcon>
+            </DockItem>
+          </Link>
         ))}
       </Dock>
     </div>
