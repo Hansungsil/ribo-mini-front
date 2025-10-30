@@ -1,8 +1,9 @@
-import NavPosts from "@/components/nav/NavPosts";
+import Navbar from "@/components/common/Navbar";
+import { postsNavItems } from "@/data/navItem";
 
 const PostsLayout = ({ children }: { children: React.ReactNode }) => {
   return <>
-    <NavPosts />
+    <Navbar navItems={postsNavItems} />
     {children}
   </>;
 };
