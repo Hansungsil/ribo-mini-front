@@ -1,8 +1,9 @@
-import NavCompos from "@/components/nav/NavCompos";
+import Navbar from "@/components/common/Navbar";
+import { composNavItems } from "@/data/navItem";
 
 const ComposLayout = ({ children }: { children: React.ReactNode }) => {
   return <>
-    <NavCompos />
+    <Navbar navItems={composNavItems} />
     {children}
   </>;
 };

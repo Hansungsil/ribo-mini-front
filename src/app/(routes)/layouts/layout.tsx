@@ -1,8 +1,9 @@
-import NavLayouts from "@/components/nav/NavLayouts";
+import Navbar from "@/components/common/Navbar";
+import { layoutsNavItems } from "@/data/navItem";
 
 const LayoutsLayout = ({ children }: { children: React.ReactNode }) => {
   return <>
-    <NavLayouts />
+    <Navbar navItems={layoutsNavItems} />
     {children}
   </>;
 };
