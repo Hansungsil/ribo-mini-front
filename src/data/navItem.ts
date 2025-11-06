@@ -2,15 +2,17 @@ import { NavItem } from "@/types/common/navItem";
 
 const postsNavItems: NavItem[] = [
     {
+        type: 'posts',
         key: 'Posts1',
-        value: 'posts',
+        value: 'posts1',
         children: [
             { key: 'Default', value: 'default' },
         ],
     },
     {
+        type: 'posts',
         key: 'Posts2',
-        value: 'posts',
+        value: 'posts2',
         children: []
     }
 ]
@@ -18,15 +20,17 @@ const postsNavItems: NavItem[] = [
 
 const layoutsNavItems: NavItem[] = [
     {
+        type: 'layouts',
         key: 'Layouts1',
-        value: 'layouts',
+        value: 'layouts1',
         children: [
             { key: 'Default', value: 'default' },
         ],
     },
     {
+        type: 'layouts',
         key: 'Layouts2',
-        value: 'layouts',
+        value: 'layout2',
         children: []
     }
 ]
@@ -34,15 +38,17 @@ const layoutsNavItems: NavItem[] = [
 
 const composNavItems: NavItem[] = [
     {
+        type: 'compos',
         key: 'Checkbox',
-        value: 'compos',
+        value: 'checkbox',
         children: [
             { key: 'Default', value: 'default' },
         ],
     },
     {
+        type: 'compos',
         key: 'Slider',
-        value: 'compos',
+        value: 'slider',
         children: [
             { key: 'Center', value: 'center' },
             { key: 'Left', value: 'left' },

@@ -9,40 +9,41 @@ import {
 } from 'lucide-react';
 import { Dock, DockIcon, DockItem, DockLabel } from '@/components/ui/shadcn-io/dock';
 import Link from 'next/link';
+import cx from 'classnames';
 
 const data = [
   {
     title: 'Home',
     icon: (
-      <HomeIcon className='h-full w-full text-neutral-600 dark:text-neutral-300' />
+      <HomeIcon className='h-full w-full text-white dark:text-white' />
     ),
     href: '/',
   },
   {
     title: 'Posts',
     icon: (
-      <StickyNote className='h-full w-full text-neutral-600 dark:text-neutral-300' />
+      <StickyNote className='h-full w-full text-white dark:text-white' />
     ),
     href: '/posts',
   },
   {
     title: 'Layouts',
     icon: (
-      <LayoutDashboard className='h-full w-full text-neutral-600 dark:text-neutral-300' />
+      <LayoutDashboard className='h-full w-full text-white dark:text-white' />
     ),
     href: '/layouts',
   },
   {
     title: 'Components',
     icon: (
-      <Component className='h-full w-full text-neutral-600 dark:text-neutral-300' />
+      <Component className='h-full w-full text-white dark:text-white' />
     ),
     href: '/compos',
   },
   {
     title: 'Info',
     icon: (
-      <User className='h-full w-full text-neutral-600 dark:text-neutral-300' />
+      <User className='h-full w-full text-white dark:text-white' />
     ),
     href: '/info',
   },
@@ -54,7 +55,10 @@ export default function AppleStyleDock() {
         {data.map((item, idx) => (
           <Link href={item.href} key={idx}> 
             <DockItem
-              className='aspect-square rounded-full bg-gray-200 dark:bg-gray-800'
+              className={cx('aspect-square rounded-full', {
+                'bg-[#c084fc] dark:bg-[#e879f9]': idx % 2 === 0,
+                'bg-[#818cf8] dark:bg-[#38bdf8]': idx % 2 === 1,
+              })}
             >
               <DockLabel>{item.title}</DockLabel>
               <DockIcon>{item.icon}</DockIcon>
