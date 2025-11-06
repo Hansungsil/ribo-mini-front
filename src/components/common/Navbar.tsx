@@ -20,14 +20,14 @@ const Navbar = ({ navItems }: props) => {
                   <ul>
                     {item.children?.map((child) => (
                       <li key={child.key}>
-                        <NavigationMenuLink href={`/${item.value}/${child.value}`}>{child.key}</NavigationMenuLink>
+                        <NavigationMenuLink href={`/${item.type}/${item.value}/${child.value}`}>{child.key}</NavigationMenuLink>
                       </li>
                     ))}
                   </ul>
                 </NavigationMenuContent>
               </>
             ) : (
-              <NavigationMenuLink href={`/${item.value}`}>{item.key}</NavigationMenuLink>
+              <NavigationMenuLink href={`/${item.type}/${item.value}`}>{item.key}</NavigationMenuLink>
             )}
           </NavigationMenuItem>
         ))}
